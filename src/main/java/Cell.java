@@ -2,8 +2,8 @@ public class Cell {
     private boolean isMine = false;
     private int minesAround = 0;
 
-    public Cell(String str) {
-        isMine = str.equals("*");
+    public Cell(char c) {
+        isMine = (c == '*');
     }
 
     public String toString() {
