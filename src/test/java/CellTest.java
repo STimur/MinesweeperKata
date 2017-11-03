@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 public class CellTest {
     @Test
-    public void printMineCell() throws Exception {
-        assertEquals('*', new Cell('*').print());
+    public void printCellWithMine() throws Exception {
+        assertEquals("*", new Cell("*").print());
     }
 }

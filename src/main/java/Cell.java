@@ -1,8 +1,8 @@
 public class Cell {
-    public Cell(char c) {
+    public Cell(String str) {
     }
 
-    public char print() {
-        return '*';
+    public String print() {
+        return "*";
     }
 }
