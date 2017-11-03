@@ -10,6 +10,10 @@ public class Field {
             cells[0].addNeighbour(cells[1]);
             cells[1].addNeighbour(cells[0]);
         }
+        if (l > 2) {
+            cells[1].addNeighbour(cells[2]);
+            cells[2].addNeighbour(cells[1]);
+        }
     }
 
     public String toString() {

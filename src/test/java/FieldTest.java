@@ -10,5 +10,6 @@ public class FieldTest {
         assertEquals("**", new Field("**").toString());
         assertEquals("*1", new Field("*.").toString());
         assertEquals("1*", new Field(".*").toString());
+        assertEquals("1*1", new Field(".*.").toString());
     }
 }
