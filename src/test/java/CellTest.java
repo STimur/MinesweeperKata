@@ -1,7 +1,5 @@
 import org.junit.Test;
 
-import java.awt.print.PrinterJob;
-
 import static org.junit.Assert.assertEquals;
 
 public class CellTest {
@@ -16,10 +14,9 @@ public class CellTest {
     }
 
     @Test
-    public void printCellWithoutMineWithOneMineNeighbour() throws Exception {
+    public void printCellWithOneMineNeighbour() throws Exception {
         Cell cell = new Cell(".");
-        Cell cellWithMine = new Cell("*");
-        cell.addNeighbour(cellWithMine);
+        cell.addNeighbour(new Cell("*"));
         assertEquals("1", cell.print());
     }
 }
