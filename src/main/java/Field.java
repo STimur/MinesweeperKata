@@ -33,7 +33,13 @@ public class Field {
                 addTopRightNeighbourForCell(row, col);
                 addRightNeighbourForCell(row, col);
                 addBottomNeighbourForCell(row, col);
+                addBottomLeftNeighbourForCell(row, col);
             }
+    }
+
+    private void addBottomLeftNeighbourForCell(int row, int col) {
+        if (row + 1 < h && col - 1 >= 0)
+            cells[row][col].addNeighbour(cells[row + 1][col - 1]);
     }
 
     private void addTopRightNeighbourForCell(int row, int col) {

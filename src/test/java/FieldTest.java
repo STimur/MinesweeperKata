@@ -16,5 +16,6 @@ public class FieldTest {
         assertEquals("1\n*", new Field(".\n*").toString());
         assertEquals("*1\n11", new Field("*.\n..").toString());
         assertEquals("1*\n11", new Field(".*\n..").toString());
+        assertEquals("11\n*1", new Field("..\n*.").toString());
     }
 }
