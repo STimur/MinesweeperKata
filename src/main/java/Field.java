@@ -1,36 +1,44 @@
 public class Field {
-    private final Cell[] cells;
+    private final Cell[][] cells;
+    private final int h;
     private final int l;
 
     public Field(String str) {
-        l = str.length();
-        cells = new Cell[l];
-        for (int i = 0; i < l; i++)
-            cells[i] = new Cell(str.charAt(i));
+        String[] lines = str.split("\n");
+        h = lines.length;
+        l = lines[0].length();
+        cells = new Cell[h][l];
+        for (int row = 0; row < h; row++)
+            for (int col = 0; col < l; col++)
+                cells[row][col] = new Cell(lines[row].charAt(col));
         addNeighbours();
     }
 
     public String toString() {
         String str = "";
-        for (Cell c : cells)
-            str += c.toString();
-        return str;
+        for (Cell[] cs : cells) {
+            for (Cell c : cs)
+                str += c.toString();
+            str += "\n";
+        }
+        return str.trim();
     }
 
     private void addNeighbours() {
-        for (int x = 0; x < l; x++) {
-            addLeftNeighbourForCell(x);
-            addRightNeighbourForCell(x);
-        }
+        for (int row = 0; row < h; row++)
+            for (int col = 0; col < l; col++) {
+                addLeftNeighbourForCell(row, col);
+                addRightNeighbourForCell(row, col);
+            }
     }
 
-    private void addRightNeighbourForCell(int x) {
-        if (x - 1 >= 0)
-            cells[x].addNeighbour(cells[x - 1]);
+    private void addRightNeighbourForCell(int row, int col) {
+        if (col - 1 >= 0)
+            cells[row][col].addNeighbour(cells[row][col - 1]);
     }
 
-    private void addLeftNeighbourForCell(int x) {
-        if (x + 1 < l)
-            cells[x].addNeighbour(cells[x + 1]);
+    private void addLeftNeighbourForCell(int row, int col) {
+        if (col + 1 < l)
+            cells[row][col].addNeighbour(cells[row][col + 1]);
     }
 }
