@@ -14,7 +14,7 @@ public class CellTest {
     }
 
     @Test
-    public void printCellWithOneMineNeighbour() throws Exception {
+    public void printCellWithMineNeighbour() throws Exception {
         Cell cell = new Cell(".");
         cell.addNeighbour(new Cell("*"));
         assertEquals("1", cell.print());
