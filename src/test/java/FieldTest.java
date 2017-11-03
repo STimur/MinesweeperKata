@@ -7,5 +7,6 @@ public class FieldTest {
     public void printField() throws Exception {
         assertEquals("*", new Field("*").print());
         assertEquals("0", new Field(".").print());
+        assertEquals("**", new Field("**").print());
     }
 }
