@@ -28,17 +28,23 @@ public class Field {
         for (int row = 0; row < h; row++)
             for (int col = 0; col < l; col++) {
                 addLeftNeighbourForCell(row, col);
+                addTopNeighbourForCell(row, col);
                 addRightNeighbourForCell(row, col);
             }
-    }
-
-    private void addRightNeighbourForCell(int row, int col) {
-        if (col - 1 >= 0)
-            cells[row][col].addNeighbour(cells[row][col - 1]);
     }
 
     private void addLeftNeighbourForCell(int row, int col) {
         if (col + 1 < l)
             cells[row][col].addNeighbour(cells[row][col + 1]);
+    }
+
+    private void addTopNeighbourForCell(int row, int col) {
+        if (row - 1 >= 0)
+            cells[row][col].addNeighbour(cells[row-1][col]);
+    }
+
+    private void addRightNeighbourForCell(int row, int col) {
+        if (col - 1 >= 0)
+            cells[row][col].addNeighbour(cells[row][col - 1]);
     }
 }
