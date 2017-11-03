@@ -4,17 +4,17 @@ import static org.junit.Assert.assertEquals;
 
 public class CellTest {
     @Test
-    public void printCellWithMine() throws Exception {
+    public void cellWithMineToString() throws Exception {
         assertEquals("*", new Cell('*').toString());
     }
 
     @Test
-    public void printCellWithoutMine() throws Exception {
+    public void cellWithoutMineToString() throws Exception {
         assertEquals("0", new Cell('.').toString());
     }
 
     @Test
-    public void printCellWithMineNeighbour() throws Exception {
+    public void cellWithMineNeighbourToString() throws Exception {
         Cell cell = new Cell('.');
         cell.addNeighbour(new Cell('*'));
         assertEquals("1", cell.toString());

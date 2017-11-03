@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 public class FieldTest {
     @Test
-    public void printField() throws Exception {
+    public void fieldToString() throws Exception {
         assertEquals("*", new Field("*").toString());
         assertEquals("0", new Field(".").toString());
         assertEquals("**", new Field("**").toString());
