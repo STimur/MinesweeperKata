@@ -1,5 +1,6 @@
 public class Cell {
     private final boolean isMine;
+    private int minesAround = 0;
 
     public Cell(String str) {
         isMine = str.equals("*");
@@ -8,6 +9,11 @@ public class Cell {
     public String print() {
         if (isMine)
             return "*";
-        return "0";
+        return String.valueOf(minesAround);
+    }
+
+    public void addNeighbour(Cell cell) {
+        if (cell.isMine)
+            minesAround++;
     }
 }
