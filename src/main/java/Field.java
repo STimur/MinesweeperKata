@@ -8,10 +8,10 @@ public class Field {
             cells[i] = new Cell(String.valueOf(str.charAt(i)));
     }
 
-    public String print() {
+    public String toString() {
         String str = "";
         for (Cell c : cells)
-            str += c.print();
+            str += c.toString();
         return str;
     }
 }

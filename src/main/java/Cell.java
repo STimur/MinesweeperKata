@@ -6,7 +6,7 @@ public class Cell {
         isMine = str.equals("*");
     }
 
-    public String print() {
+    public String toString() {
         if (isMine)
             return "*";
         return String.valueOf(minesAround);
