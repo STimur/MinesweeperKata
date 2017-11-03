@@ -6,6 +6,8 @@ public class Field {
         cells = new Cell[l];
         for (int i = 0; i < l; i++)
             cells[i] = new Cell(String.valueOf(str.charAt(i)));
+        if (l > 1)
+            cells[1].addNeighbour(cells[0]);
     }
 
     public String toString() {

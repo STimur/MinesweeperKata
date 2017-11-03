@@ -8,5 +8,6 @@ public class FieldTest {
         assertEquals("*", new Field("*").toString());
         assertEquals("0", new Field(".").toString());
         assertEquals("**", new Field("**").toString());
+        assertEquals("*1", new Field("*.").toString());
     }
 }
