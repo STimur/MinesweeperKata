@@ -30,6 +30,7 @@ public class Field {
                 addLeftNeighbourForCell(row, col);
                 addTopNeighbourForCell(row, col);
                 addRightNeighbourForCell(row, col);
+                addBottomNeighbourForCell(row, col);
             }
     }
 
@@ -40,11 +41,16 @@ public class Field {
 
     private void addTopNeighbourForCell(int row, int col) {
         if (row - 1 >= 0)
-            cells[row][col].addNeighbour(cells[row-1][col]);
+            cells[row][col].addNeighbour(cells[row - 1][col]);
     }
 
     private void addRightNeighbourForCell(int row, int col) {
         if (col - 1 >= 0)
             cells[row][col].addNeighbour(cells[row][col - 1]);
+    }
+
+    private void addBottomNeighbourForCell(int row, int col) {
+        if (row + 1 < h)
+            cells[row][col].addNeighbour(cells[row + 1][col]);
     }
 }
