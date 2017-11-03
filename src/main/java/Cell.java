@@ -1,5 +1,5 @@
 public class Cell {
-    private final boolean isMine;
+    private boolean isMine = false;
     private int minesAround = 0;
 
     public Cell(String str) {
