@@ -28,6 +28,7 @@ public class Field {
         for (int row = 0; row < h; row++)
             for (int col = 0; col < l; col++) {
                 addLeftNeighbourForCell(row, col);
+                addTopLeftNeighbour(row, col);
                 addTopNeighbourForCell(row, col);
                 addRightNeighbourForCell(row, col);
                 addBottomNeighbourForCell(row, col);
@@ -37,6 +38,11 @@ public class Field {
     private void addLeftNeighbourForCell(int row, int col) {
         if (col + 1 < l)
             cells[row][col].addNeighbour(cells[row][col + 1]);
+    }
+
+    private void addTopLeftNeighbour(int row, int col) {
+        if (row - 1 >= 0 && col - 1 >= 0)
+            cells[row][col].addNeighbour(cells[row - 1][col - 1]);
     }
 
     private void addTopNeighbourForCell(int row, int col) {
